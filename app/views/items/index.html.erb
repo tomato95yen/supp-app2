@@ -1,8 +1,10 @@
 商品一覧
 
 <% @item.each do |item| %>
+<%= link_to item_path(item.id) do %>
 <%= image_tag item.image.variant(resize: '300x300') %>
 <%= item.name %>
+<% end %>
 <%= item.explanation %>
 <%= item.category.name %>
 <%= item.price %>
