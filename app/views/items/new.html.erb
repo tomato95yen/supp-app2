@@ -1,7 +1,7 @@
 <h1>商品登録</h1>
 <%= form_with model: @item, local: true do |f|%>
 <h3>画像</h3>
-<%= f.file_field :image, name: 'image' %>
+<%= f.file_field :image, name: 'item[image]' %>
 <h3>名前</h3>
 <%= f.text_area :name %>
 <h3>説明文</h3>
@@ -10,4 +10,6 @@
 <%= f.collection_select(:category_id, Category.all, :id, :name, {}) %>
 <h3>価格</h3>
 <%= f.text_field :price %>
+</br>
+<%= f.submit "出品する" %>
 <% end %>

@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   end
   get 'home/index'
   root to: "home#index"
-  resources :items, only: [:index, :new]
+  resources :items, only: [:index, :new, :create]
 end
