@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'cards/new'
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
@@ -12,4 +13,5 @@ Rails.application.routes.draw do
   resources :items do
     resources :user_items, only: [:index, :create, :new, :index]
   end
+  resources :cards, only: [:new, :create]
 end
